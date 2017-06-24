@@ -6,6 +6,7 @@ from time import sleep
 
 import requests
 import scrapy
+import utm
 from scrapy.crawler import CrawlerProcess
 from scrapy.utils.project import get_project_settings
 
@@ -18,7 +19,7 @@ class Immoscout24Bot(scrapy.Spider):
     name = "immoscout24bot"
 
     def start_requests(self):
-        for i in range(1, settings.NUM_PAGES + 1):
+        for i in range(settings.PAGE_START, settings.PAGE_END + 1):
             url = 'https://www.immobilienscout24.de/Suche/S-T/P-{0}/Wohnung-Miete/Berlin/Berlin'.format(i)
             yield scrapy.Request(url = url, callback = self.parse)
 
@@ -68,9 +69,11 @@ class Immoscout24Bot(scrapy.Spider):
             rooms = criteria_set[2]
             lat = coordinates[i][0]
             lng = coordinates[i][1]
+            utm_coord = utm.from_latlon(lat, lng)
 
             apartment = Apartment(price = price, size = size, rooms = rooms, address = addresses[i], lat = lat,
-                                  lng = lng, date = date)
+                                  lng = lng, date = date, zone = utm_coord[2], band = utm_coord[3], east = utm_coord[0],
+                                  north = utm_coord[1])
             parsed.append(apartment)
         return parsed
 

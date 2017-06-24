@@ -8,4 +8,8 @@ class Apartment(scrapy.Item):
     address = scrapy.Field()
     lat = scrapy.Field()
     lng = scrapy.Field()
+    zone = scrapy.Field()
+    band = scrapy.Field()
+    east = scrapy.Field()
+    north = scrapy.Field()
     date = scrapy.Field()

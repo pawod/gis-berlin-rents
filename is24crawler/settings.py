@@ -5,7 +5,8 @@ BOT_NAME = 'immoscout24bot'
 ITEM_PIPELINES = {'is24crawler.pipelines.CsvWriterPipeline': 300}
 USER_AGENT = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 DOWNLOAD_DELAY = 3
-NUM_PAGES = 180
+PAGE_START = 1
+PAGE_END = 183
 
 # results
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))

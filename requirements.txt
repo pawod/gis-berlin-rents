@@ -29,5 +29,6 @@ setupfiles==0.0.50
 six==1.10.0
 Twisted==17.5.0
 urllib3==1.21.1
+utm==0.4.2
 w3lib==1.17.0
 zope.interface==4.4.2

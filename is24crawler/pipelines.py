@@ -16,12 +16,14 @@ class CsvWriterPipeline(object):
     def process_item(self, item, spider):
         """
         writes a csv file for each crawled page.
-        format: price in eur|size in m^2|number of rooms|address|latitude\longitude\date.
+        format: price in eur|size in m^2|number of rooms|address|latitude|longitude|UTM zone|UTM latitude band|
+                UTM easting coord|UTM northing coord|date
         """
         writer = csv.writer(self.file, delimiter = '|')
         for apartment in item["apartments"]:
             row = [apartment["price"], apartment["size"], apartment["rooms"], apartment["address"], apartment["lat"],
-                   apartment["lng"], apartment["date"]]
+                   apartment["lng"], apartment["zone"], apartment["band"], apartment["east"], apartment["north"],
+                   apartment["date"]]
             writer.writerow(row)
             self.file.flush()
         print("page {} processed.".format(item["page"]))
