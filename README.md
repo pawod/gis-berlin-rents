@@ -1,5 +1,33 @@
 # gis-berlin-rents
 
-## Setup/Install instructions:
+## About
 
-1. Get an API key at: https://rest.immobilienscout24.de/restapi/security/registration/
+This tool crawls information about rental apartments from [immobilienscout24.de](https://www.immobilienscout24.de/Suche/S-T/P-1/Wohnung-Miete/Berlin/Berlin). More specifically in the area of Berlin. The crawled results are stored in a CSV file at the `~/out` dir. Following format is used:
+ 
+    price in EUR | flat size in m^2 | number of rooms | address | latitude | longitude | date of crawling 
+
+Apartments with incomplete or ambiguous addresses are omitted. Apartments with missing features or having price ranges instead of a fixed price are also omitted. 
+
+Crawled results are always appended to the file. Based on the apartments' addresses, the coordinates are extracted in a separate step from the Google Maps API. Random delays in between 2 and 10 seconds are added in between each API call to prevent getting blocked.
+
+## Requirements
+
+- Python 3.5 or higher
+
+## Setup your Python Environment
+
+Make sure to have all required packages installed. You can install them via following command:
+
+        pip install requirements.txt
+
+The `requirements.txt` is located at the project's root.
+
+## Configuration
+ 
+The `settings.py` allows you to adjust following settings:
+
+- USER_AGENT: The user agent string to be used for the web crawler.
+- DOWNLOAD_DELAY = The delay in seconds in between crawling each page
+- NUM_PAGES = The number of pages to be crawled
+
+The remaining variables should not be changed unless the crawler needs to be adapted to reflect changes of the website to be crawled.
