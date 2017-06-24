@@ -23,5 +23,6 @@ class CsvWriterPipeline(object):
             row = [apartment["price"], apartment["size"], apartment["rooms"], apartment["address"], apartment["lat"],
                    apartment["lng"], apartment["date"]]
             writer.writerow(row)
+            self.file.flush()
         print("page {} processed.".format(item["page"]))
         return item
