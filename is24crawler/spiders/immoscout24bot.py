@@ -82,7 +82,7 @@ class Immoscout24Bot(scrapy.Spider):
         :return: a list of tuples (lat,lng).
         """
         coords = []
-        for idx, addr in addresses:
+        for idx, addr in enumerate(addresses):
             parts = addr.split(",")
             if len(parts) != 3:
                 coords.append("incomplete address")
@@ -103,7 +103,7 @@ class Immoscout24Bot(scrapy.Spider):
                                                                                                    city)
 
             if idx > 0:
-                sleep(random.randint(2, 15))  # prevent getting blocked from the google API
+                sleep(random.randint(2, 10))  # prevent getting blocked from the google API
 
             r = requests.get(request)
             results = r.json()["results"]
