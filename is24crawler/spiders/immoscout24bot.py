@@ -64,9 +64,9 @@ class Immoscout24Bot(scrapy.Spider):
                 pprint(criteria_set)
                 continue
 
-            price = criteria_set[0].split()[0].replace('.', '')
-            size = criteria_set[1].split()[0].replace(',', '.')
-            rooms = criteria_set[2]
+            price = float(criteria_set[0].split()[0].replace('.', '').replace(',', '.'))
+            size = float(criteria_set[1].split()[0].replace(',', '.'))
+            rooms = float(criteria_set[2].replace(',', '.'))
             lat = coordinates[i][0]
             lng = coordinates[i][1]
             utm_coord = utm.from_latlon(lat, lng)
