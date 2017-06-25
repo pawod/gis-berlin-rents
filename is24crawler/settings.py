@@ -5,7 +5,7 @@ BOT_NAME = 'immoscout24bot'
 ITEM_PIPELINES = {'is24crawler.pipelines.CsvWriterPipeline': 300}
 USER_AGENT = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1)'
 DOWNLOAD_DELAY = 3
-PAGE_START = 132
+PAGE_START = 1
 PAGE_END = 183
 
 # results
@@ -18,7 +18,3 @@ NUM_CRITERIA = 3
 CRITERIA_SELECTOR = '.grid-item.result-list-entry__data-container .grid-item.result-list-entry__primary-criterion ' \
                     'dd::text'
 ADDRESS_SELECTOR = '.result-list-entry__map-link::text'
-
-print("------SETTINGS------ csv path: {}".format(CSV_FILE_PATH))
-print("------SETTINGS------ start page: {}".format(PAGE_START))
-print("------SETTINGS------ end page: {}".format(PAGE_END))

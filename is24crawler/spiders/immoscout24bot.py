@@ -124,6 +124,10 @@ class Immoscout24Bot(scrapy.Spider):
 
 
 os.environ["SCRAPY_SETTINGS_MODULE"] = "is24crawler.settings"
+print("------SETTINGS------ csv path: {}".format(settings.CSV_FILE_PATH))
+print("------SETTINGS------ start page: {}".format(settings.PAGE_START))
+print("------SETTINGS------ end page: {}".format(settings.PAGE_END))
+
 process = CrawlerProcess(get_project_settings())
 process.crawl(Immoscout24Bot)
 process.start()

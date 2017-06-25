@@ -16,6 +16,6 @@ rcolumns[-1] = "squaremeter price"
 rdf.columns = rcolumns
 
 filePath = os.path.join(is24crawler.settings.OUT_DIR, "apartments-reformatted.csv")
-rdf.to_csv(filePath, sep = '\t')
+rdf.to_csv(filePath, sep = '\t', header = True, index = False)
 
 print("reformatted csv written to: '{}'".format(filePath))
