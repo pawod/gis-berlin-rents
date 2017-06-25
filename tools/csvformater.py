@@ -14,3 +14,5 @@ rdf = pd.DataFrame([df.rooms, df.price, df.area, df.address, pd.to_datetime(df.d
 
 filePath = os.path.join(is24crawler.settings.OUT_DIR, "apartments-reformatted.csv")
 rdf.to_csv(filePath, sep = '\t', index = False, header = None)
+
+print("reformatted csv written to: '{}'".format(filePath))

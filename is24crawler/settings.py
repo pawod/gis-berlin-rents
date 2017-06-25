@@ -18,3 +18,7 @@ NUM_CRITERIA = 3
 CRITERIA_SELECTOR = '.grid-item.result-list-entry__data-container .grid-item.result-list-entry__primary-criterion ' \
                     'dd::text'
 ADDRESS_SELECTOR = '.result-list-entry__map-link::text'
+
+print("------SETTINGS------ csv path: {}".format(CSV_FILE_PATH))
+print("------SETTINGS------ start page: {}".format(PAGE_START))
+print("------SETTINGS------ end page: {}".format(PAGE_END))
