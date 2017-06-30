@@ -2,7 +2,7 @@
 
 ## About
 
-This tool crawls information about rental apartments from [immobilienscout24.de](https://www.immobilienscout24.de/Suche/S-T/P-1/Wohnung-Miete/Berlin/Berlin). More specifically in the area of Berlin. The crawled results are stored in a CSV file at the `~/out` dir. Following format is used:
+This tool crawls information about rental apartments from [immobilienscout24.de](https://www.immobilienscout24.de/Suche/S-T/P-1/Wohnung-Miete/Berlin/Berlin). More specifically in the area of Berlin. The crawled results are stored in a CSV file at the `./out` dir. Following format is used:
  
     price in EUR | flat size in m^2 | number of rooms | address | WGS84 latitude | WGS84 longitude | UTM zone | UTM latitude band | UTM easting coord | UTM northing coord | date of crawling 
 
