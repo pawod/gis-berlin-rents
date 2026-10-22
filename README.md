@@ -1,5 +1,7 @@
 # gis-berlin-rents
 
+![Map of 2,873 Berlin rental listings crawled in June 2017, coloured by rent per m²](gis-berlin-rents-map.png)
+
 ## About
 
 This tool crawls information about rental apartments from [immobilienscout24.de](https://www.immobilienscout24.de/Suche/S-T/P-1/Wohnung-Miete/Berlin/Berlin). More specifically in the area of Berlin. The crawled results are stored in a CSV file at the `./out` dir. Following format is used:
